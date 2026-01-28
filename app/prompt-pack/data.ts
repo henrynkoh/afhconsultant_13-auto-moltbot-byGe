@@ -1,0 +1,76 @@
+export interface PromptSection {
+  title: string;
+  description?: string;
+  items: string[];
+}
+
+export const INSPECTION_PROMPT_PACK: PromptSection[] = [
+  {
+    title: "A. Physical Plant (물리적 환경) – 15 prompts",
+    description: "WAC 388-76-10685~10825: bedrooms, bathrooms, ramps, alarms, exits.",
+    items: [
+      'moltbot agent --thinking high --message "WAC 388-76-10685에 근거하여, 현재 10x12ft 방에 거주자 1명이 있을 때 창문 크기가 최소 5.7 sq ft인지 확인하는 체크리스트를 작성해줘."',
+      'moltbot agent --message "Bathroom의 grab bar 설치 위치에 대해 ADA 기준과 WAC 기준을 비교하고, 더 엄격한 기준을 선택해 설치 가이드를 만들어줘."',
+      'moltbot agent --message "주방 화학물질 보관함 사진을 분석해서 \'locked storage\' 규정에 어긋나는 점을 찾아내고 수정 권고안을 작성해줘."',
+      'moltbot agent --message "WAC 388-76-10685를 기준으로 내 평면도의 창문 크기가 비상 탈출(Emergency Egress) 규격에 맞는지 계산해줘."',
+      'moltbot agent --message "모든 화재 감지기(Smoke Alarm)가 상호 연결(Interconnected)되어야 한다는 규정을 만족하는지 배선도를 분석해줘."',
+      'moltbot agent --message "거주자 화장실의 Grab Bar가 바닥에서 33~36인치 사이에 설치되었는지 사진으로 판독해줘."',
+      'moltbot agent --message "주방 가스레인지 위에 자동 소화 장치(Stovetop Fire Suppressor) 설치 여부를 점검 항목에 추가해줘."',
+      'moltbot agent --message "경사로(Ramp)의 기울기가 1:12 비율을 유지하는지 측정 데이터를 바탕으로 합격 여부를 판단해줘."',
+      'moltbot agent --message "WAC 388-76-10785에 따라 수온이 105°F~120°F 범위인지 확인하는 일일 체크리스트와 로그 템플릿을 만들어줘."',
+      'moltbot agent --message "복도 폭이 WAC 388-76-10660에서 요구하는 36인치 이상인지 평면도 기준으로 검토해줘."',
+      'moltbot agent --message "WAC 388-76-10710에 따른 거실 최소 조도(20 foot-candles) 요구사항을 설명하고 측정 방법을 알려줘."',
+      'moltbot agent --message "소화기 위치, 개수, 점검 주기가 WAC를 만족하는지 시설 평면도에 맞춰 검토해줘."',
+      'moltbot agent --message "각 층별 비상구 개수와 출구 표시등·조명 요구사항을 WAC 기준으로 정리해줘."',
+      'moltbot agent --message "주방 조리대 재질이 non-absorbent, easy to clean 조건을 만족하는지 WAC 388-76-10730 기준으로 검토해줘."',
+      'moltbot agent --message "침실 문 잠금 장치(내부/외부)가 거주자 프라이버시와 비상 대피 요구를 동시에 만족하는지 WAC에 맞춰 분석해줘."',
+    ],
+  },
+  {
+    title: "B. Documentation & Paperwork (서류·기록 관리) – 20 prompts",
+    description: "MAR, care plans, assessments, DSHS forms, logs.",
+    items: [
+      'moltbot agent --thinking high --message "지난 3개월간의 MAR 스캔 파일을 읽고, 누락된 서명이나 기록 오류를 감사(Audit)해서 표로 정리해줘."',
+      'moltbot agent --message "신규 입소자 A의 진단명과 기능 상태를 기반으로, WAC 필수 항목이 모두 포함된 맞춤형 Care Plan 초안을 작성해줘."',
+      'moltbot agent --message "DSHS 웹사이트에서 최신 Background Check 양식을 찾아서, 우리 시설 라이선스 정보로 미리 채워줘."',
+      'moltbot agent --message "지난달 MAR 기록 전체를 스캔해서 서명이 누락된 날짜와 시간을 엑셀 표로 정리해줘."',
+      'moltbot agent --message "거주자 Assessment 데이터를 읽고, WAC 필수 14개 항목이 누락되지 않은 Care Plan 초안을 생성해줘."',
+      'moltbot agent --message "DSHS Background Check 갱신 대상자 명단을 추출하고, 당사자에게 보낼 안내 이메일을 작성해줘."',
+      'moltbot agent --message "입소 계약서(Admission Agreement)에서 \'퇴거 30일 전 공지\' 조항이 WAC와 충돌하는지 검토해줘."',
+      'moltbot agent --message "WAC 388-76-10500에 맞는 Resident Rights 정책서 초안을 작성해줘."',
+      'moltbot agent --message "WAC 388-76-10460에 맞는 Disaster Plan 초안을 작성하고, 우리 시설 평면도에 맞춰 대피 경로를 포함해줘."',
+      'moltbot agent --message "WAC 388-76-10430에 따른 Medication Management 정책서 초안을 작성해줘."',
+      'moltbot agent --message "직원 교육 로그에서 75시간 기본 교육 이수 현황을 점검하고, 미이수자에게 보낼 리마인더 이메일 초안을 작성해줘."',
+      'moltbot agent --message "사고 보고서(Incident Report) 템플릿을 WAC 및 DSHS 요구사항에 맞게 작성해줘."',
+      'moltbot agent --message "거주자 평가(Assessment) 양식에 WAC에서 요구하는 모든 항목이 포함되었는지 검토해줘."',
+      'moltbot agent --message "TB/CPR 만료 30일 이내인 직원 목록을 Staff 폴더에서 추출하고, 갱신 안내 이메일을 작성해줘."',
+      'moltbot agent --message "WAC 388-76-10355에 맞는 Negotiated Care Plan(NCP) 템플릿을 만들어줘. Who/When/How, Crisis Plan, Resident Rights 반영 포함."',
+      'moltbot agent --message "최근 DSHS Dear Provider Letter가 우리 시설 정책에 미치는 변경 사항을 요약해줘."',
+      'moltbot agent --message "거주자 기금 관리 레지스터를 검토하고, 영수증 미첨부 거래가 있는지 플래그해줘."',
+      'moltbot agent --message "화재 훈련 로그가 WAC 요구 빈도와 교대별 요구사항을 만족하는지 검토해줘."',
+      'moltbot agent --message "수온 로그가 30일간 매일 기록되었는지, 105~120°F 범위를 벗어난 기록이 있는지 검토해줘."',
+      'moltbot agent --message "신규 입소 시 제공해야 할 서면 정보 목록(WAC 기준)을 체크리스트로 만들어줘."',
+    ],
+  },
+  {
+    title: "C. Inspector Logic & Defense (검사관 대응 논리) – 15 prompts",
+    description: "Real-time Q&A scripts and correction plans.",
+    items: [
+      'moltbot agent --message "검사관이 \'왜 거실에 거주자 권리 안내문이 안 붙어 있냐\'고 물을 때, WAC 388-76-10505를 인용해서 논리적으로 방어하는 답변 스크립트를 만들어줘."',
+      'moltbot agent --message "Initial Inspection에서 가장 자주 지적받는 Top 10 항목과, 각 항목별 즉각 조치(Correction) 계획서 초안을 미리 작성해줘."',
+      'moltbot agent --message "검사관이 \'거주자 개인 냉장고\' 설치를 요구할 때, 규정상 의무인지 권장 사항인지 논리적으로 답변하는 스크립트를 만들어줘."',
+      'moltbot agent --message "치매 거주자의 \'배회 방지 알람\' 사용이 Restraint로 간주되지 않기 위한 Care Plan 기록법을 알려줘."',
+      'moltbot agent --message "Initial Inspection에서 \'낙상 방지(Fall Prevention)\' 대책을 물을 때 답변할 5단계 표준 프로토콜을 짜줘."',
+      'moltbot agent --message "검사관이 복도 폭을 지적할 때, WAC 388-76-10660 인용 및 측정치 제시용 답변 스크립트를 만들어줘."',
+      'moltbot agent --message "약물 오류 발생 시 검사관에게 설명할 \'자기 수정(Self-Correction)\' 및 \'제공자 통보\' 단계를 WAC 기준으로 정리해줘."',
+      'moltbot agent --message "검사관이 \'거주자 케어 플랜 서명이 3개월 전인데 갱신했나\'고 물을 때, WAC 갱신 주기와 함께 답변할 논리를 만들어줘."',
+      'moltbot agent --message "Restricted Access(잠긴 현관문)가 치매 거주자에게 적용될 때 WAC와 NCP로 어떻게 정당화하는지 스크립트를 작성해줘."',
+      'moltbot agent --message "검사관이 수온 로그를 검토할 때, 우리 시설의 수온 범위와 측정 방법을 한 문단으로 설명하는 스크립트를 만들어줘."',
+      'moltbot agent --message "직원 TB 미검사 상태로 케어 제공 의혹을 받을 때, WAC 388-76-10165를 인용해 대응할 답변 초안을 작성해줘."',
+      'moltbot agent --message "화재 훈련 시 거주자별 대피 시간을 기록해야 하는 이유를 WAC 인용으로 설명하는 스크립트를 만들어줘."',
+      'moltbot agent --message "Schedule II 약물 보관(이중 잠금) 요구사항을 검사관에게 설명할 때 사용할 WAC 인용문과 답변을 작성해줘."',
+      'moltbot agent --message "검사관이 \'주방 잠금\'을 지적할 때, 주거권·구속 금지와의 관계를 WAC 388-76-10515 기준으로 설명하는 스크립트를 만들어줘."',
+      'moltbot agent --message "Plan of Correction(POC) 공식 양식에 맞춰, \'약물 보관함 이중 잠금 미비\' 지적에 대한 시정 계획 초안을 작성해줘."',
+    ],
+  },
+];
