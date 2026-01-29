@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/paperwork-binder/page": "app/paperwork-binder/page.js",
+  "/prompt-pack/page": "app/prompt-pack/page.js",
+  "/moltbot-scripts/page": "app/moltbot-scripts/page.js",
+  "/curriculum/page": "app/curriculum/page.js",
+  "/question-bank/page": "app/question-bank/page.js"
+}
